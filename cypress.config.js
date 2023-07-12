@@ -25,9 +25,9 @@ module.exports = defineConfig({
         plugins: [createEsbuildPlugin(config)],
       });
 
-      on('before:browser:launch', (browser = {}, launchOptions) => {
-        if (browser.family === 'chromium' && browser.name !== 'electron') {
-          launchOptions.args.push('--disable-gpu');
+      on("before:browser:launch", (browser = {}, launchOptions) => {
+        if (browser.family === "chromium" && browser.name !== "electron") {
+          launchOptions.args.push("--disable-gpu");
         }
 
         return launchOptions;
@@ -38,11 +38,11 @@ module.exports = defineConfig({
 
       return config;
     },
-    
+
     defaultCommandTimeout: 20000,
     experimentalSessionAndOrigin: true,
-    specPattern: "cypress/e2e/features/*.feature",
-    baseUrl: "https://mcstaging.lepanierbleu.ca/",
+    specPattern: "cypress/e2e/features/**/*.feature",
+    baseUrl: "https://mcstaging.lepanierbleu.ca/en/",
     chromeWebSecurity: false,
     experimentalStudio: true,
     experimentalWebKitSupport: true,
