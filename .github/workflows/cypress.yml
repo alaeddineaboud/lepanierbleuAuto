@@ -9,7 +9,4 @@ jobs:
       - name: Install Dependencies
         run: npm ci --force
       - name: Run Cypress Tests
-        uses: cypress-io/github-action@v2
-        with:
-          start: npx cypress run --spec "cypress\e2e\features\Consumer"
-          wait-on: 'http://localhost:3000'
+        run: npx cypress run --spec "cypress\e2e\features\Consumer"
